@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:ConnectFour"
+    xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+    x:Class="ConnectFour.MainPage">
+
+    <ContentPage.Content>
+
+        <StackLayout
+            HorizontalOptions="FillAndExpand"
+            VerticalOptions="FillAndExpand"
+            Orientation="Vertical" 
+            Margin="10">
+
+            <Label
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Fill"
+                HorizontalTextAlignment="Start" 
+                VerticalTextAlignment="Center"
+                FontSize="32"
+                Text="Another Connect Four" />
+
+            <Label       
+                x:Name="LabelStatus"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Fill" 
+                HorizontalTextAlignment="Start" 
+                VerticalTextAlignment="Center"
+                FontSize="20"
+                Text="" />
+
+            <skia:SKCanvasView
+                x:Name="CanvasViewConnectFour"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand"
+                PaintSurface="PaintAppSurface"
+                EnableTouchEvents="True"  
+                Touch="CanvasBoardTouched"
+                BackgroundColor="LightGray" />
+
+            <Button
+                x:Name="ButtonClear"
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="Fill" 
+                Clicked="ButtonClicked"
+                Text="Reset" />
+
+        </StackLayout>
+
+    </ContentPage.Content>
+
+</ContentPage>
